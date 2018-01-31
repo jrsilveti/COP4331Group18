@@ -1,0 +1,100 @@
+
+<html>
+<head>
+	<title>Contact Manager</title>
+	<script type="text/javascript" src="js/code.js"></script>
+	<link href="styles.css" rel="stylesheet">	
+</head>
+<body>
+
+<form id="form1" runat="server">
+
+<div class="out">
+<div class="middle">
+<div class="in">
+
+<div title="wrap">
+<div id="title">
+    Contact Manager
+</div>
+</div>
+
+<script src="js/md5.js"></script>
+
+<div id="loginDiv" style="display:normal; visibility:visible;">
+    <input type="text" id="loginName" placeholder="UserName"> <br />
+    <input type="password" id="loginPassword" placeholder="Password"><br />
+    <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
+    <button type="button" id="registerButton" class="buttons" onclick="openRegistration();"> Register </button>
+    <span id="loginResult"></span>
+</div>
+
+<div id="registerDiv" style="display:none; visibility:hidden;">
+    <table>
+        <tr>
+            <th>
+                Register a New User: <br />
+            </th>
+        </tr>
+        <tr>
+            <td><input type="text" id="newUserName" placeholder="UserName"> <br /></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="newUserPass" placeholder="Password"> <br /></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="newUserFirst" placeholder="FirstName"> <br /></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="newUserLast" placeholder="LastName"> <br /></td>
+        </tr>
+        <tr>
+            <td><button type="button" id="registerUser" class="buttons" onclick="addUser();"> Add User </button></td>
+            <td><button type="button" id="canceluser" class="buttons" onclick="cancelRegistration();"> Cancel </button><br /></td>
+        </tr>
+    </table>    
+    <span id="userAddResult"></span>
+</div>
+
+
+<div id="loggedInDiv" style="display:none; visibility:hidden;">
+	Logged in as <span id="userName"></span><br />
+	<button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+</div>
+<div id="accessUIDiv" style="display:none; visibility:hidden;">
+    <br />
+
+    Add New Contact: <br />
+    <input type="text" id="contactText" placeholder="Name"> <br />
+    <input type="text" id="phoneNumber" placeholder="Phone"> <br />
+    <button type="button" id="addContactButton" class="buttons" onclick="addContact(); searchContact();"> Add Contact </button><br />
+    <span id="contactAddResult"></span> <br />
+
+    Search for contact: <input type="text" id="searchText"> <br />
+    <button type="button" id="searchContactButton" class="buttons" onclick="searchContact();"> Search Contact </button>
+    <!--<button type="button" id="deleteContactButton" class="buttons" onclick="deleteContact();"> Delete Contact </button><br />-->
+    <span id="contactSearchResult"></span> <br />
+    <table id="listContacts" , border="1">
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>PHONE</th>
+                <th>DELETE?</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table><br /><br />
+
+    <span id="contactDeleteResult"></span>
+</div>
+
+    <br />
+
+</div>
+</div>
+</div>
+
+</form>
+</body>
+</html>
